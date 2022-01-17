@@ -1,46 +1,49 @@
-<?php namespace emericklaw\SQLAnywhere;
+<?php
+
+namespace emericklaw\SQLAnywhere;
 
 use Illuminate\Database\Connectors\Connector;
 use Illuminate\Database\Connectors\ConnectorInterface;
 use Illuminate\Support\Arr;
 use \emericklaw\SQLAnywhereClient;
 
-class SQLAnywhereConnector extends Connector implements ConnectorInterface {
+class SQLAnywhereConnector extends Connector implements ConnectorInterface
+{
 
-	/**
-	 * Establish a database connection.
-	 *
-	 * @param  array  $options
-	 * @return PDO
-	 */
-	public function connect(array $config)
-	{
-		return $this->createConnection(array(), $config, array());
-	}
+    /**
+     * Establish a database connection.
+     *
+     * @param  array  $options
+     * @return PDO
+     */
+    public function connect(array $config)
+    {
+        return $this->createConnection([], $config, []);
+    }
 
 
-	/**
-	 * Create a new PDO connection.
-	 *
-	 * @param  array   $config
-	 * @param  array   $options
-	 * @return SQLAnywhere
-	 */
-	public function createConnection($dsn, array $config, array $options)
-	{
-		$autocommit = Arr::get($config, 'autocommit');
-		$persintent = Arr::get($config, 'persintent');
+    /**
+     * Create a new PDO connection.
+     *
+     * @param  array   $config
+     * @param  array   $options
+     * @return SQLAnywhere
+     */
+    public function createConnection($dsn, array $config, array $options)
+    {
+        $autocommit = Arr::get($config, 'autocommit');
+        $persintent = Arr::get($config, 'persintent');
 
-		return new SQLAnywhereClient($this->getDsn($config), $autocommit, $persintent);
-	}
+        return new SQLAnywhereClient($this->getDsn($config), $autocommit, $persintent);
+    }
 
-	/**
+    /**
      * Create a DSN string from a configuration.
      *
      * @param  array   $config
      * @return string
      */
-	protected function getDsn(array $config)
+    protected function getDsn(array $config)
     {
         // First we will create the basic DSN setup as well as the port if it is in
         // in the configuration options. This will give us the basic DSN we will
@@ -53,12 +56,12 @@ class SQLAnywhereConnector extends Connector implements ConnectorInterface {
         // Sample: UID=test;PWD=test;ENG=dbserv;DBN=dbname;COMMLINKS=TCPIP{HOST=192.168.100.100:2638}
         $dsn = "uid={$username};pwd={$password};dbn={$database};commlinks=tcpip{host={$host}:{$port}}";
         if (isset($charset)) {
-            $dsn.= ";charset={$charset}";
+            $dsn .= ";charset={$charset}";
         }
         if (isset($dbserver)) {
-            $dsn.= ";ENG={$dbserver}";
+            $dsn .= ";ENG={$dbserver}";
         }
 
-		return $dsn;
+        return $dsn;
     }
 }
