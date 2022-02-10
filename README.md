@@ -1,4 +1,4 @@
-#Laravel SQLAnyWhere
+# Laravel SQLAnyWhere
 
 Adds an Sybase driver to Laravel 5.7 and above (tested with 5.7, 6.0 and 7.0) usable with Fluent and Eloquent.
 
@@ -6,12 +6,14 @@ Adds an Sybase driver to Laravel 5.7 and above (tested with 5.7, 6.0 and 7.0) us
 The latest version only works with Laravel 5.7 and higher. For lower
 version use [version 1.4.1](https://github.com/emericklaw/laravel-sqlanywhere/tree/v1.4.1).
 
-##Todo
-    - Migrate integration is not 100%
-    - Find bugs
+
+## Todo
+
+- [ ] Migrate integration is not 100%
+- [ ] Find bugs
 
 
-##Installation
+## Installation
 
 Add `emericklaw/laravel-sqlanywhere` as a requirement to `composer.json`:
 
@@ -70,7 +72,7 @@ emericklaw\SQLAnywhere\SQLAnywhereServiceProvider::class,
 You won't need to add anything to the aliases section.
 
 
-##Configuration
+## Configuration
 
 The login parameters could be set inside the `.env` file.
 ```php
