@@ -1,11 +1,11 @@
 {
-    "name": "emericklaw/laravel-sqlanywhere",
-    "description": "A Sybase driver based Eloquent model and Query builder for Laravel 5. Based on Cagartner module.",
+    "name": "divolution/laravel-sqlanywhere",
+    "description": "A Sybase driver based Eloquent model and Query builder for Laravel > 5. Based on Cagartner module.",
     "keywords": ["laravel","eloquent","sybase","sqlanywhere","database","model"],
     "authors": [
         {
-            "name": "Matthew Emerick-Law",
-            "homepage": "https://github.com/emericklaw/"
+            "name": "Tol EDV",
+            "homepage": "https://github.com/divolution/"
         }
     ],
     "license" : "MIT",
@@ -21,7 +21,7 @@
     },
     "autoload": {
         "psr-0": {
-            "emericklaw\\SQLAnywhere": "src/"
+            "divolution\\SQLAnywhere": "src/"
         }
     }
 }
