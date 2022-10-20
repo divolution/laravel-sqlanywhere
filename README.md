@@ -4,7 +4,7 @@ Adds an Sybase driver to Laravel 5.7 and above (tested with 5.7, 6.0 and 7.0) us
 
 ## Attention
 The latest version only works with Laravel 5.7 and higher. For lower
-version use [version 1.4.1](https://github.com/emericklaw/laravel-sqlanywhere/tree/v1.4.1).
+version use [version 1.4.1](https://github.com/divolution/laravel-sqlanywhere/tree/v1.4.1).
 
 
 ## Todo
@@ -15,41 +15,41 @@ version use [version 1.4.1](https://github.com/emericklaw/laravel-sqlanywhere/tr
 
 ## Installation
 
-Add `emericklaw/laravel-sqlanywhere` as a requirement to `composer.json`:
+Add `divolution/laravel-sqlanywhere` as a requirement to `composer.json`:
 
 ```javascript
 {
     "require": {
         ...
-        "emericklaw/sql-anywhere-client": "dev-master",
-        "emericklaw/laravel-sqlanywhere": "dev-master"
+        "divolution/sql-anywhere-client": "dev-master",
+        "divolution/laravel-sqlanywhere": "dev-master"
     },
     "repositories": [
         {
             "type": "package",
             "package": {
-                "name": "emericklaw/sql-anywhere-client",
+                "name": "divolution/sql-anywhere-client",
                 "version": "dev-master",
                 "dist": {
-                    "url": "https://github.com/emericklaw/sql-anywhere-client/zipball/master",
+                    "url": "https://github.com/divolution/sql-anywhere-client/zipball/master",
                     "type": "zip"
                 },
                 "autoload": {
-                    "psr-0": { "emericklaw": "src/" }
+                    "psr-0": { "divolution": "src/" }
                 }
             }
         },
         {
             "type": "package",
             "package": {
-                "name": "emericklaw/laravel-sqlanywhere",
+                "name": "divolution/laravel-sqlanywhere",
                 "version": "dev-master",
                 "dist": {
-                    "url": "https://github.com/emericklaw/laravel-sqlanywhere/zipball/master",
+                    "url": "https://github.com/divolution/laravel-sqlanywhere/zipball/master",
                     "type": "zip"
                 },
                 "autoload": {
-                    "psr-0": { "emericklaw\\SQLAnywhere": "src/" }
+                    "psr-0": { "divolution\\SQLAnywhere": "src/" }
                 }
             }
         }
@@ -66,7 +66,7 @@ Open up `config/app.php` and find the providers key towards the bottom.
 
  Add the following to the list of providers:
 ```php
-emericklaw\SQLAnywhere\SQLAnywhereServiceProvider::class,
+divolution\SQLAnywhere\SQLAnywhereServiceProvider::class,
 ```
 
 You won't need to add anything to the aliases section.
